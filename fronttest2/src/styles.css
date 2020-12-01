@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    font-family: 'Kanit', sans-serif;
+}
+.inbd {
+    /* padding-top: 2rem; */
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+.border-filed {
+    padding-top: 1rem;
+}
+.logo-login{
+    width: 50%;
+    height: 60%;
+}
