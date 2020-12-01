@@ -57,4 +57,5 @@ class RegisterController extends Controller
 
         return response()->json(['newitem'=>$new],201);
     }
+    
 }
