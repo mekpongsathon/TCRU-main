@@ -50,7 +50,7 @@ class RegisterController extends Controller
         $new->firstname = $request->input('firstname');
         $new->lastname = $request->input('lastname');
         $new->mail = $request->input('mail');
-        $new->tel = $request->input('tel');
+        // $new->tel = $request->input('tel');
         $new->role_id = $request->input('role_id');
         
         $new->save();
