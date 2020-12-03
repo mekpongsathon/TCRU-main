@@ -1,1 +1,46 @@
-<span>login component</span>
+<!-- <form [formGroup]=reactiveForm> -->
+    <br>
+    <h2 style="text-align: center;">เข้าสู่ระบบ</h2>
+    <hr style="width: 50%;">
+    <br>
+
+    <body class="indb">
+        <div class="p-grid">
+            <div class="p-col-1 p-md-4 p-lg-4"></div>
+            <div class="p-col-12 p-md-4 p-lg-4">
+                <img src="../../../assets/tcru-image.jpg" class="p-d-block p-mx-auto logo-login">
+            </div>
+            <div class="p-col-1 p-md-4 p-lg-4"></div> 
+        </div> 
+        <div class="p-grid">
+            <div class="p-col-1 p-md-4 p-lg-4"></div>
+            <div class="p-col-12 p-md-4 p-lg-4 form-group border-filed p-input-filled">
+                <div class="p-inputgroup">
+                    <span class="p-float-label">
+                        <input type="text" id="username" pInputText class="p-inputtext-lg form-control"
+                                    formControlName="username" minlength="6" maxlength="16" required>
+                        <label for="in_title">ชื่อผู้ใช้</label>
+                    </span>
+                </div>
+            </div>    
+        </div>
+        <div class="p-grid">
+            <div class="p-col-1 p-md-4 p-lg-4"></div>
+            <div class="p-col-12 p-md-4 p-lg-4 form-group border-filed p-input-filled">
+                <div class="p-inputgroup">
+                    <span class="p-float-label">
+                        <input type="password" class="form-control" pInputText class="p-inputtext-lg form-control"
+                            formControlName="password" minlength="6" maxlength="16">
+                        <label for="in_title">รหัสผ่าน</label>
+                    </span>
+                </div>
+            </div>            
+        </div>  
+        <div class="p-grid">
+            <div class="p-col-1 p-md-4 p-lg-4"></div>
+            <div class="p-col-12 p-md-6 p-lg-6 form-group">
+                <button type="submit" pButton label="สมัครสมาชิก" routerLink="/login"></button>
+            </div>
+        </div>    
+    </body>
+<!-- </form> -->
