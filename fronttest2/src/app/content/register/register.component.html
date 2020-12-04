@@ -40,14 +40,14 @@
                     <div class="p-col-12 p-md-6 p-lg-6 form-group border-filed p-input-filled">
                         <div class="p-inputgroup">
                             <span class="p-float-label">
-                                <input type="text" id="tel" pInputText class="p-inputtext-lg form-control"
-                                    formControlName="tel" required minlength="9" maxlength="10"
+                                <input type="text" id="telephone" pInputText class="p-inputtext-lg form-control"
+                                    formControlName="telephone" required minlength="9" maxlength="10"
                                     pattern="^[0-9]+$">
                                 <label for="in_title">เบอร์โทรศัพท์</label>
                             </span>
                         </div>   
-                        <div class="text-danger" *ngIf="tel.invalid && (tel.dirty || tel.touched)">
-                            <div *ngIf="tel.errors['required']">โปรดกรอกเบอร์โทรศัพท์</div>
+                        <div class="text-danger" *ngIf="telephone.invalid && (telephone.dirty || telephone.touched)">
+                            <div *ngIf="telephone.errors['required']">โปรดกรอกเบอร์โทรศัพท์</div>
                         </div>
                     </div>    
                 </div>

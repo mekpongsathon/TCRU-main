@@ -39,7 +39,7 @@ export class RegisterComponent implements OnInit {
     // })
     this.reactiveForm = this.fb.group({
       username: ['', null, uniqueUsernameValidator(this.customerService), Validators.minLength(6), Validators.maxLength(16), Validators.pattern('^[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]+$')],
-      tel: ['', [Validators.required], Validators.maxLength(10), Validators.pattern('^[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]+$')],
+      // tel: ['', [Validators.required], Validators.maxLength(10), Validators.pattern('^[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]+$')],
       // email: ['', [Validators.required], uniqueEmailValidator(this.customerService)],
       // emailConfirm: ['', [Validators.required, compareValidator('email')], uniqueEmailValidator(this.customerService)],
       password: ['', [Validators.required], Validators.maxLength(16), Validators.pattern('^[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]+$')],
@@ -47,6 +47,7 @@ export class RegisterComponent implements OnInit {
       firstname: ['', [Validators.required], Validators.maxLength(16)],
       lastname: ['', [Validators.required], Validators.maxLength(16)],
       role_id: [2, [Validators.required]],
+      telephone: ['', [Validators.required]],
     })
   }
 
@@ -84,8 +85,8 @@ export class RegisterComponent implements OnInit {
   get passwordConfirm() {
     return this.reactiveForm.get('passwordConfirm')
   }
-  get tel() {
-    return this.reactiveForm.get('tel')
+  get telephone() {
+    return this.reactiveForm.get('telephone')
   }
   
 

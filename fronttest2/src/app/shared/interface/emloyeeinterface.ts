@@ -5,7 +5,7 @@ export interface Emloyeeinterface {
     firstname: string;
     lastname: string;
     mail: string;
-    tel: string;
+    telephone: string;
     role_id: number;
     updated_at?: any;
     created_at?: any;
