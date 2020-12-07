@@ -22,6 +22,10 @@ import { UniqueUsernameValidatorDirective } from './shared/service/unique-userna
 import { CommonModule } from '@angular/common';
 import { CompareValidatorDirective } from './shared/service/compare-validator.directive';
 import { UniqueEmailValidatorDirective } from './shared/service/unique-email-validator.directive';
+import { MenubarComponent } from './content/menubar/menubar.component';
+import {MenubarModule} from 'primeng/menubar';
+import {MenuModule} from 'primeng/menu';
+import { FooterComponent } from './content/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -32,8 +36,9 @@ import { UniqueEmailValidatorDirective } from './shared/service/unique-email-val
     ProductviewComponent,
     UniqueUsernameValidatorDirective,
     CompareValidatorDirective,
-    UniqueEmailValidatorDirective
-
+    UniqueEmailValidatorDirective,
+    MenubarComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,8 +59,8 @@ import { UniqueEmailValidatorDirective } from './shared/service/unique-email-val
     MessagesModule,
     MessageModule,
     CommonModule,
-
-
+    MenubarModule,
+    MenuModule,
 
   ],
   providers: [],
