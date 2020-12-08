@@ -16,27 +16,17 @@ use App\Http\Requests ;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::group([
-    'middleware' => 'api',
-    'prefix' => 'auth'
 
-], function ($router) {
-    Route::get('/register/{username}','RegisterController@getCustomerByUsername'); 
-    Route::post('/register','RegisterController@createcustomer'); //create data
-    Route::get('/product','ProductController@getproduct'); //get data
-    Route::post('login', 'AuthController@login');
-    Route::post('register', 'AuthController@register');
-    Route::post('logout', 'AuthController@logout');
-    Route::post('refresh', 'AuthController@refresh');
-    Route::get('user-profile', 'AuthController@userProfile');
-});
-
-
-
-
-// Route::get('/info/{id}','RestfulController@getinfoByid'); 
-// Route::get('/info/{id}','RestfulController@getinfoByid'); 
 // Route::get('/register','RegisterController@getcustomer'); //get data
+Route::get('/register/{username}','RegisterController@getCustomerByUsername'); 
+
+
+
+
+Route::post('/register','RegisterController@createcustomer'); //create data
+// Route::get('/info/{id}','RestfulController@getinfoByid'); 
+Route::get('/product','ProductController@getproduct'); //get data
+// Route::get('/info/{id}','RestfulController@getinfoByid'); 
 
 
 
