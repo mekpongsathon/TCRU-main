@@ -49,8 +49,8 @@ class RegisterController extends Controller
         $new->password = $request->input('password');
         $new->firstname = $request->input('firstname');
         $new->lastname = $request->input('lastname');
-        $new->mail = $request->input('mail');
-        // $new->tel = $request->input('tel');
+        // $new->mail = $request->input('mail');
+        $new->telephone = $request->input('telephone');
         $new->role_id = $request->input('role_id');
         
         $new->save();
