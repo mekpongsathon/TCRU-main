@@ -26,6 +26,7 @@ import { MenubarComponent } from './content/menubar/menubar.component';
 import {MenubarModule} from 'primeng/menubar';
 import {MenuModule} from 'primeng/menu';
 import { FooterComponent } from './content/footer/footer.component';
+import {MegaMenuModule} from 'primeng/megamenu';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import { FooterComponent } from './content/footer/footer.component';
     CommonModule,
     MenubarModule,
     MenuModule,
+    MegaMenuModule,
 
   ],
   providers: [],

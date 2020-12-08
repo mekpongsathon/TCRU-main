@@ -1,11 +1,10 @@
 <app-menubar></app-menubar>
+
 <form [formGroup]=reactiveForm>
+    <body class="indb" style="padding-top: 4rem;">
     <br>
     <h2 style="text-align: center;">สมัครสมาชิก</h2>
     <hr style="width: 50%;">
-    <br>
-
-    <body class="indb">
         <div class="p-grid">
             <div class="p-col-1"></div>
             <div class="p-col-12 p-md-4 p-lg-4">
@@ -16,14 +15,20 @@
                 <div class="p-grid">
                     <div class="p-col-12 p-md-6 p-lg-6 form-group border-filed p-input-filled">
                         <div class="p-inputgroup">
-                            <span class="p-float-label">
+                            <!-- <span class="p-float-label">
                                 <input type="text" id="username" pInputText class="p-inputtext-lg form-control"
                                     formControlName="username" required minlength="6" maxlength="16"
                                     pattern="^[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]+$">
                                 <label for="in_title">ชื่อผู้ใช้</label>
-                            </span>
+                            </span> -->
+                            <div class="p-field">
+                                <label for="username">ชื่อผู้ใช้</label>
+                                <input type="text" id="username" pInputText class="p-inputtext-lg form-control w-100"
+                                    formControlName="username" required minlength="6" maxlength="16"
+                                    pattern="^[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]+$" aria-describedby="username-help" />
+                                <a class="text-danger">*</a><small id="username-help">โปรดกรอกชื่อผู้ใช้ด้วย a-z พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข</small>
+                            </div>
                         </div>
-                        <a class="text-danger">*</a><small>โปรดกรอกชื่อผู้ใช้ด้วย a-z พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข</small>
                         <div class="text-danger" *ngIf="username.invalid && (username.dirty || username.touched)">
                             <div *ngIf="username.errors.pattern">
                                 ชื่อผู้ใช้ประกอบไปด้วยa-z พิมพ์เล็กหรือพิมพ์ใหญ่
@@ -40,12 +45,18 @@
                     </div>
                     <div class="p-col-12 p-md-6 p-lg-6 form-group border-filed p-input-filled">
                         <div class="p-inputgroup">
-                            <span class="p-float-label">
+                            <!-- <span class="p-float-label">
                                 <input type="text" id="telephone" pInputText class="p-inputtext-lg form-control"
                                     formControlName="telephone" required minlength="9" maxlength="10"
                                     pattern="^[0-9]+$">
                                 <label for="in_title">เบอร์โทรศัพท์</label>
-                            </span>
+                            </span> -->
+                            <div class="p-field">
+                                <label for="telephone">เบอร์โทรศัพท์</label>
+                                <input type="text" id="telephone" pInputText class="p-inputtext-lg form-control w-100"
+                                    formControlName="telephone" required minlength="6" maxlength="16"
+                                    pattern="^[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]+$" />
+                            </div>
                         </div>   
                         <div class="text-danger" *ngIf="telephone.invalid && (telephone.dirty || telephone.touched)">
                             <div *ngIf="telephone.errors['required']">โปรดกรอกเบอร์โทรศัพท์</div>
@@ -55,14 +66,21 @@
                 <div class="p-grid">
                     <div class="p-col-12 p-md-6 p-lg-6 form-group border-filed p-input-filled">
                         <div class="p-inputgroup">
-                            <span class="p-float-label">
+                            <!-- <span class="p-float-label">
                                 <input type="password" class="form-control" pInputText class="p-inputtext-lg form-control"
                                     formControlName="password" minlength="6" maxlength="16"
                                     pattern="^[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]+$">
                                 <label for="in_title">รหัสผ่าน</label>
-                            </span>
+                            </span> -->
+                            <div class="p-field">
+                                <label for="password">รหัสผ่าน</label>
+                                <input type="text" id="password" pInputText class="p-inputtext-lg form-control w-100"
+                                    formControlName="password" required minlength="6" maxlength="16"
+                                    pattern="^[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]+$" aria-describedby="password-help" />
+                                <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
+                            </div>
                         </div>
-                        <a class="text-danger">*</a><small>โปรดกรอกรหัสผ่านด้วย a-z พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
+                        <!--                                                                 <a class="text-danger">*</a><small>โปรดกรอกรหัสผ่านด้วย a-z พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small> -->
                         <div class="text-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
                             <div *ngIf="password.errors.pattern">
                                 รหัสผ่านประกอบไปด้วยa-zพิมพ์เล็กหรือพิมพ์ใหญ่ ตัวเลข
@@ -84,6 +102,7 @@
                                 <label for="">ยืนยันรหัสผ่าน</label>
                             </span>
                         </div>
+                        <!-- <input type="text" pInputText /> -->
                         <div class="text-danger"
                             *ngIf="passwordConfirm.invalid && (passwordConfirm.dirty || passwordConfirm.touched)">
                             <div *ngIf="passwordConfirm.errors['required']">โปรดกรอกรหัสผ่าน</div>
@@ -121,12 +140,12 @@
                 <div class="p-grid">
                     <div class="p-col-12 p-md-6 p-lg-6 form-group">
                         <button type="submit" pButton label="สมัครสมาชิก" [disabled]="reactiveForm.invalid"
-                            (click)="onClickRegis()" routerLink="/login"></button>
+                            (click)="onClickRegis()" routerLink="/login" class="p-button-raised"></button>
                     </div>
                 </div>
             </div>
         </div>    
     </body>
 </form>
-<br> B <br> B <br> B <br> B <br> B <br> B <br> B <br> B 
+<br> B <br> B <br> B <br> B <br> B <br> B 
 <app-footer></app-footer>
