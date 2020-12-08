@@ -1,13 +1,7 @@
 /node_modules
 /public/storage
 /storage/*.key
-<<<<<<< HEAD
-<<<<<<< HEAD
-/vender
-=======
->>>>>>> 28f188b922ac96cc04957a7a863f0c41e9fef7d2
-=======
->>>>>>> 28f188b922ac96cc04957a7a863f0c41e9fef7d2
+/vendor
 /.idea
 Homestead.json
 Homestead.yaml
