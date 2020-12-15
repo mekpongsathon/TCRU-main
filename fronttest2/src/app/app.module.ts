@@ -1,3 +1,4 @@
+import { ShopComponent } from './content/shop/shop.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -40,6 +41,7 @@ import {MegaMenuModule} from 'primeng/megamenu';
     UniqueEmailValidatorDirective,
     MenubarComponent,
     FooterComponent,
+    ShopComponent,
   ],
   imports: [
     BrowserModule,
