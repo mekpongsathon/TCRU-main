@@ -23,8 +23,8 @@
                                 <label for="in_title">ชื่อผู้ใช้</label>
                             </span> -->
                             <div class="p-field">
-                                <label for="username">ชื่อผู้ใช้</label>
-                                <input type="text" id="username" pInputText class="p-inputtext-lg form-control w-100"
+                                <label>ชื่อผู้ใช้</label>
+                                <input type="text" pInputText class="p-inputtext-lg form-control w-100"
                                     formControlName="username" required minlength="6" maxlength="16"
                                     pattern="^[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]+$" aria-describedby="username-help" />
                                 <a class="text-danger">*</a><small id="username-help">โปรดกรอกชื่อผู้ใช้ด้วย a-z
@@ -54,8 +54,8 @@
                                 <label for="in_title">เบอร์โทรศัพท์</label>
                             </span> -->
                             <div class="p-field">
-                                <label for="telephone">เบอร์โทรศัพท์</label>
-                                <input type="text" id="telephone" pInputText class="p-inputtext-lg form-control w-100"
+                                <label>เบอร์โทรศัพท์</label>
+                                <input type="text" pInputText class="p-inputtext-lg form-control w-100"
                                     formControlName="telephone" required minlength="9" maxlength="10"
                                     pattern="^[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]+$" />
                             </div>
@@ -75,11 +75,10 @@
                                 <label for="in_title">รหัสผ่าน</label>
                             </span> -->
                             <div class="p-field">
-                                <label for="password">รหัสผ่าน</label>
-                                <input type="password" id="password" pInputText
-                                    class="p-inputtext-lg form-control w-100" formControlName="password" required
-                                    minlength="6" maxlength="16" pattern="^[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]+$"
-                                    aria-describedby="password-help" />
+                                <label>รหัสผ่าน</label>
+                                <input type="password" pInputText class="p-inputtext-lg form-control w-100"
+                                    formControlName="password" minlength="6" maxlength="16"
+                                    pattern="^[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]+$" aria-describedby="password-help" />
                                 <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
                                     พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
                             </div>

@@ -26,7 +26,7 @@ Route::group([
     Route::post('/register','RegisterController@createcustomer'); //create data
     Route::get('/product','ProductController@getproduct'); //get data
     Route::post('login', 'AuthController@login');
-    Route::post('register', 'AuthController@register');
+    // Route::post('register', 'AuthController@register'); jwt register
     Route::post('logout', 'AuthController@logout');
     Route::post('refresh', 'AuthController@refresh');
     Route::get('user-profile', 'AuthController@userProfile');

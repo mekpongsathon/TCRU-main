@@ -24,10 +24,11 @@ import { CommonModule } from '@angular/common';
 import { CompareValidatorDirective } from './shared/service/compare-validator.directive';
 import { UniqueEmailValidatorDirective } from './shared/service/unique-email-validator.directive';
 import { MenubarComponent } from './content/menubar/menubar.component';
-import {MenubarModule} from 'primeng/menubar';
-import {MenuModule} from 'primeng/menu';
+import { MenubarModule } from 'primeng/menubar';
+import { MenuModule } from 'primeng/menu';
 import { FooterComponent } from './content/footer/footer.component';
-import {MegaMenuModule} from 'primeng/megamenu';
+import { MegaMenuModule } from 'primeng/megamenu';
+import { ProfileComponent } from './content/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,8 @@ import {MegaMenuModule} from 'primeng/megamenu';
     MenubarComponent,
     FooterComponent,
     ShopComponent,
+    ProfileComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
