@@ -10,7 +10,7 @@ import { element } from 'protractor';
 })
 export class EmployeeserviceService {
 
-  private url = 'http://127.0.0.1:8000/api/register/';
+  private url = 'http://127.0.0.1:8000/api/auth/register/';
   constructor(private http: HttpClient) { }
   // getCustomer() {
   //   let httpParms = new HttpParams();
@@ -22,9 +22,9 @@ export class EmployeeserviceService {
       map(users => {
         const newUsers = [];
         for (let user of users) {
-          const email = user.mail;
+          // const email = user.mail;
           const uName = user.username;
-          newUsers.push({ email: email, username: uName });
+          newUsers.push({ username: uName });
         }
         return newUsers;
       }),

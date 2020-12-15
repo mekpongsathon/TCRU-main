@@ -21,6 +21,7 @@ Route::group([
     'prefix' => 'auth'
 
 ], function ($router) {
+    Route::get('/register','RegisterController@getcustomer'); //get data
     Route::get('/register/{username}','RegisterController@getCustomerByUsername'); 
     Route::post('/register','RegisterController@createcustomer'); //create data
     Route::get('/product','ProductController@getproduct'); //get data
