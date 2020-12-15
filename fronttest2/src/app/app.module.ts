@@ -1,3 +1,4 @@
+import { LoginComponent } from './content/login/login.component';
 import { ShopComponent } from './content/shop/shop.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -44,7 +45,8 @@ import { ProfileComponent } from './content/profile/profile.component';
     FooterComponent,
     ShopComponent,
     ProfileComponent,
-    ProfileComponent
+    ProfileComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
