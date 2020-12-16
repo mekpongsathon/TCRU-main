@@ -8,9 +8,10 @@ import { SigninComponent } from './content/signin/signin.component';
 
 
 const routes: Routes = [
-  { path: '', component: RegisterComponent },
+  { path: '', component: ShopComponent },
+  { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'shop', component: ShopComponent },
+  // { path: 'shop', component: ShopComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'signin', component: SigninComponent },
 ];
