@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
-import { EmployeeserviceService } from 'src/app/shared/service/employeeservice.service';
+import { CustomerService } from 'src/app/shared/service/customer.service';
 import { compareValidator } from 'src/app/shared/service/compare-validator.directive';
 // import { resolve } from 'dns';
 import { uniqueEmailValidator } from './../../shared/service/unique-email-validator.directive';
@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
   reactiveForm: FormGroup;
   submitted = false;
 
-  constructor(private customerService: EmployeeserviceService, private http: HttpClient, private fb: FormBuilder) {
+  constructor(private customerService: CustomerService, private http: HttpClient, private fb: FormBuilder) {
 
   }
   ngOnInit() {
@@ -88,7 +88,7 @@ export class RegisterComponent implements OnInit {
   get telephone() {
     return this.reactiveForm.get('telephone')
   }
-  
+
 
 
 
