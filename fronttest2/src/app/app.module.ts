@@ -1,3 +1,4 @@
+import { ResetPasswordComponent } from './content/resetPassword/resetPassword.component';
 import { LoginComponent } from './content/login/login.component';
 import { ShopComponent } from './content/shop/shop.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -48,7 +49,8 @@ import { SigninComponent } from './content/signin/signin.component';
     ProfileComponent,
     ProfileComponent,
     LoginComponent,
-    SigninComponent
+    SigninComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     BrowserModule,

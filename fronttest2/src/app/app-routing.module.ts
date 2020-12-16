@@ -1,3 +1,4 @@
+import { ResetPasswordComponent } from './content/resetPassword/resetPassword.component';
 import { ShopComponent } from './content/shop/shop.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -14,6 +15,7 @@ const routes: Routes = [
   // { path: 'shop', component: ShopComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'signin', component: SigninComponent },
+  { path: 'login/resetpassword', component: ResetPasswordComponent },
 ];
 
 @NgModule({
