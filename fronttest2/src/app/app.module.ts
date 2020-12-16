@@ -32,6 +32,8 @@ import { FooterComponent } from './content/footer/footer.component';
 import { MegaMenuModule } from 'primeng/megamenu';
 import { ProfileComponent } from './content/profile/profile.component';
 import { SigninComponent } from './content/signin/signin.component';
+import {DialogModule} from 'primeng/dialog';
+
 
 @NgModule({
   declarations: [
@@ -74,7 +76,7 @@ import { SigninComponent } from './content/signin/signin.component';
     MenubarModule,
     MenuModule,
     MegaMenuModule,
-
+    DialogModule,
 
   ],
   providers: [],
