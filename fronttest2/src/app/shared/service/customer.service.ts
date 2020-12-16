@@ -8,7 +8,7 @@ import { element } from 'protractor';
 @Injectable({
   providedIn: 'root'
 })
-export class EmployeeserviceService {
+export class CustomerService {
 
   private url = 'http://127.0.0.1:8000/api/auth/register/';
   constructor(private http: HttpClient) { }

@@ -30,6 +30,7 @@ import { MenuModule } from 'primeng/menu';
 import { FooterComponent } from './content/footer/footer.component';
 import { MegaMenuModule } from 'primeng/megamenu';
 import { ProfileComponent } from './content/profile/profile.component';
+import { SigninComponent } from './content/signin/signin.component';
 
 @NgModule({
   declarations: [

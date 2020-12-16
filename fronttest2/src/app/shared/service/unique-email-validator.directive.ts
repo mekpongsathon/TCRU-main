@@ -2,9 +2,9 @@ import { Directive } from '@angular/core';
 import { AbstractControl, AsyncValidator, AsyncValidatorFn, NG_ASYNC_VALIDATORS, ValidationErrors } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { EmployeeserviceService } from 'src/app/shared/service/employeeservice.service';
+import { CustomerService } from 'src/app/shared/service/customer.service';
 
-export function uniqueEmailValidator(customerService: EmployeeserviceService): AsyncValidatorFn {
+export function uniqueEmailValidator(customerService: CustomerService): AsyncValidatorFn {
   return (c: AbstractControl): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> => {
     return customerService.getCustomerByEmail(c.value).pipe(
       map(users => {
@@ -21,7 +21,7 @@ export function uniqueEmailValidator(customerService: EmployeeserviceService): A
 })
 export class UniqueEmailValidatorDirective implements AsyncValidator {
 
-  constructor(private customerService: EmployeeserviceService) { }
+  constructor(private customerService: CustomerService) { }
   /////////////////////////////////////////////////////////////////////////////////////////////////////VVV
   validate(c: AbstractControl): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> {
     return this.customerService.getCustomerByEmail(c.value).pipe(
