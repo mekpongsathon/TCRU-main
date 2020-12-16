@@ -1,3 +1,4 @@
+import { PleaseCheckMailComponent } from './content/pleaseCheckMail/pleaseCheckMail.component';
 import { ResetPasswordComponent } from './content/resetPassword/resetPassword.component';
 import { LoginComponent } from './content/login/login.component';
 import { ShopComponent } from './content/shop/shop.component';
@@ -53,6 +54,7 @@ import {DialogModule} from 'primeng/dialog';
     LoginComponent,
     SigninComponent,
     ResetPasswordComponent,
+    PleaseCheckMailComponent,
   ],
   imports: [
     BrowserModule,
