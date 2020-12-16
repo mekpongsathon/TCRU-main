@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResetPasswordComponent implements OnInit {
 
+  displayModal: boolean;
+
   constructor() { }
 
   ngOnInit() {
+    
+  }
+
+  showModalDialog() {
+    this.displayModal = true;
   }
 
 }
