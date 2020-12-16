@@ -47,7 +47,8 @@ import { SigninComponent } from './content/signin/signin.component';
     ShopComponent,
     ProfileComponent,
     ProfileComponent,
-    LoginComponent
+    LoginComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
@@ -71,6 +72,7 @@ import { SigninComponent } from './content/signin/signin.component';
     MenubarModule,
     MenuModule,
     MegaMenuModule,
+
 
   ],
   providers: [],
