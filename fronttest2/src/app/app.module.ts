@@ -36,6 +36,12 @@ import { SigninComponent } from './content/signin/signin.component';
 import { DialogModule } from 'primeng/dialog';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { CardModule } from 'primeng/card';
+import { JarwisService } from './shared/service/jarwis.service';
+import { TokenService } from './shared/service/token.service';
+import { AuthService } from './shared/service/auth.service';
+import { AfterLoginService } from './shared/service/after-login.service';
+import { BeforeLoginService } from './shared/service/before-login.service';
+import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
 
 @NgModule({
   declarations: [
@@ -84,7 +90,9 @@ import { CardModule } from 'primeng/card';
     PanelMenuModule,
     CardModule,
   ],
-  providers: [],
+  providers: [JarwisService, TokenService, AuthService, AfterLoginService, BeforeLoginService,
+    { provide: 'SnotifyToastConfig', useValue: ToastDefaults },
+    SnotifyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
