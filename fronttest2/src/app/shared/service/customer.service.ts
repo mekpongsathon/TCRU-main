@@ -10,7 +10,7 @@ import { element } from 'protractor';
 })
 export class CustomerService {
 
-  private url = 'http://127.0.0.1:8000/api/auth/register/';
+  private url = 'http://127.0.0.1:8000/api/register/';
   constructor(private http: HttpClient) { }
   // getCustomer() {
   //   let httpParms = new HttpParams();
