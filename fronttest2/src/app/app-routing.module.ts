@@ -25,17 +25,17 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    // canActivate: [BeforeLoginService]
+    canActivate: [BeforeLoginService]
   },
   {
     path: 'profile',
     component: ProfileComponent,
-    // canActivate: [AfterLoginService]
+    canActivate: [AfterLoginService]
   },
-  {
-    path: 'signin',
-    component: SigninComponent
-  },
+  // {
+  //   path: 'signin',
+  //   component: SigninComponent
+  // },
   {
     path: 'login/resetpassword',
     component: ResetPasswordComponent,

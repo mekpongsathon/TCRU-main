@@ -8,6 +8,9 @@
     <a class="navbar-brand" routerLink="login" *ngIf="!loggedIn">Login</a>
     <a class="navbar-brand" href="#" (click)="logout($event)" *ngIf="loggedIn">Logout</a>
     <a class="navbar-brand" routerLink="profile" *ngIf="loggedIn">Profile</a>
+    <a class="navbar-brand" routerLink="register" *ngIf="!loggedIn">register</a>
+    <a class="navbar-brand" routerLink="login/resetpassword">resetpassword</a>
+
 
 
 
