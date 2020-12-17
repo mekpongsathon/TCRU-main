@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {MenuItem} from 'primeng/api';
-
+import { HttpClient } from '@angular/common/http';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { CustomerService } from 'src/app/shared/service/customer.service';
+import { Emloyeeinterface } from 'src/app/shared/interface/emloyeeinterface';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -8,24 +10,38 @@ import {MenuItem} from 'primeng/api';
 })
 export class ProfileComponent implements OnInit {
 
-  // items: MenuItem[];
-  // activeItem: MenuItem;
+  reactiveForm: FormGroup;
+  submitted = false;
 
-  constructor() { }
+  emp: Emloyeeinterface[];
+  constructor(private customerService: CustomerService, private http: HttpClient, private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.customerService.getCustomer().subscribe()
+    this.createForm();
+  }
 
-    // this.items = [
-    //   {label: 'Home', icon: 'pi pi-fw pi-home'},
-    //   {label: 'Calendar', icon: 'pi pi-fw pi-calendar'},
-    //   {label: 'Edit', icon: 'pi pi-fw pi-pencil'},
-    //   {label: 'Documentation', icon: 'pi pi-fw pi-file'},
-    //   {label: 'Settings', icon: 'pi pi-fw pi-cog'}
-    // ];
-  
-    // this.activeItem = this.items[0];
+  createForm() {
+    this.reactiveForm = this.fb.group({
+      username: ['',]
+    })
+  }
+
+  onClickSearch(){
+      
+      const customer = this.reactiveForm.getRawValue();
+      console.log(customer)
+      this.customerService.getCustomerByUsername(customer).subscribe(
+        response => {
+          this.emp = response;
+        }
+      );
+      
     
   }
 
+  get username() {
+    return this.reactiveForm.get('username')
+  }
 
 }
