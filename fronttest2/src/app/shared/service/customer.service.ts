@@ -37,7 +37,6 @@ export class CustomerService {
     //   params: new HttpParams().set('username', username)
     // });
     return this.http.get<any[]>(`${this.url}${username}`);
-
   }
 
   getCustomerByEmail(email: string) {
@@ -47,9 +46,7 @@ export class CustomerService {
   }
 
   postCustomer(body: Emloyeeinterface) {
-
     return this.http.post(this.url, body)
-
   }
   // constructor(private http: HttpClient) {
   // }

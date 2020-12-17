@@ -72,6 +72,7 @@ import { SigninComponent } from './content/signin/signin.component';
     MenubarModule,
     MenuModule,
     MegaMenuModule,
+    CommonModule
 
 
   ],
