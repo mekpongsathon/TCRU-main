@@ -34,6 +34,8 @@ import { MegaMenuModule } from 'primeng/megamenu';
 import { ProfileComponent } from './content/profile/profile.component';
 import { SigninComponent } from './content/signin/signin.component';
 import {DialogModule} from 'primeng/dialog';
+import {PanelMenuModule} from 'primeng/panelmenu';
+import {TabMenuModule} from 'primeng/tabmenu';
 
 
 @NgModule({
@@ -79,7 +81,8 @@ import {DialogModule} from 'primeng/dialog';
     MenuModule,
     MegaMenuModule,
     DialogModule,
-
+    PanelMenuModule,
+    TabMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
