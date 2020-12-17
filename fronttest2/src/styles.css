@@ -18,14 +18,15 @@ label{
 .inbd {
     padding-left: 5rem;
     padding-right: 5rem;
-    
+    padding-top: 4rem;
 }
 .border-filed {
     padding-top: 1rem;
 }
 .logo-login{
-    width: 50%;
-    /* height: 60%; */
+    padding-left: 5rem;
+    padding-top: 3rem;
+    width: 80%;
 }
 small{
     color: gray;
