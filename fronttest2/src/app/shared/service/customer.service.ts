@@ -36,7 +36,9 @@ export class CustomerService {
     // return this.http.get<any[]>(this.urlRequest, {
     //   params: new HttpParams().set('username', username)
     // });
-    return this.http.get<any[]>(`${this.url}${username}`);
+    const user = this.http.get<Emloyeeinterface[]>(`${this.url}${username}`)
+    return user;
+
   }
 
   getCustomerByEmail(email: string) {

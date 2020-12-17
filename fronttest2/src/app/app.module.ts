@@ -1,3 +1,5 @@
+import { PleaseCheckMailComponent } from './content/pleaseCheckMail/pleaseCheckMail.component';
+import { ResetPasswordComponent } from './content/resetPassword/resetPassword.component';
 import { LoginComponent } from './content/login/login.component';
 import { ShopComponent } from './content/shop/shop.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -31,6 +33,9 @@ import { FooterComponent } from './content/footer/footer.component';
 import { MegaMenuModule } from 'primeng/megamenu';
 import { ProfileComponent } from './content/profile/profile.component';
 import { SigninComponent } from './content/signin/signin.component';
+import { DialogModule } from 'primeng/dialog';
+import { PanelMenuModule } from 'primeng/panelmenu';
+import { CardModule } from 'primeng/card';
 
 @NgModule({
   declarations: [
@@ -48,7 +53,9 @@ import { SigninComponent } from './content/signin/signin.component';
     ProfileComponent,
     ProfileComponent,
     LoginComponent,
-    SigninComponent
+    SigninComponent,
+    ResetPasswordComponent,
+    PleaseCheckMailComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,9 +79,10 @@ import { SigninComponent } from './content/signin/signin.component';
     MenubarModule,
     MenuModule,
     MegaMenuModule,
-    CommonModule
-
-
+    CommonModule,
+    DialogModule,
+    PanelMenuModule,
+    CardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
