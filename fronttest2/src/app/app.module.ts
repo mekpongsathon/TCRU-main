@@ -33,6 +33,7 @@ import { FooterComponent } from './content/footer/footer.component';
 import { MegaMenuModule } from 'primeng/megamenu';
 import { ProfileComponent } from './content/profile/profile.component';
 import { SigninComponent } from './content/signin/signin.component';
+import {BreadcrumbModule} from 'primeng/breadcrumb';
 import { DialogModule } from 'primeng/dialog';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { CardModule } from 'primeng/card';
@@ -89,6 +90,7 @@ import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
     DialogModule,
     PanelMenuModule,
     CardModule,
+    BreadcrumbModule,
   ],
   providers: [JarwisService, TokenService, AuthService, AfterLoginService, BeforeLoginService,
     { provide: 'SnotifyToastConfig', useValue: ToastDefaults },
