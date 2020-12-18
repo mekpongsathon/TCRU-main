@@ -6,6 +6,9 @@ import { compareValidator } from 'src/app/shared/service/compare-validator.direc
 // import { resolve } from 'dns';
 import { uniqueEmailValidator } from './../../shared/service/unique-email-validator.directive';
 import { uniqueUsernameValidator } from 'src/app/shared/service/unique-username-validator.directive';
+import { JarwisService } from 'src/app/shared/service/jarwis.service';
+import { TokenService } from 'src/app/shared/service/token.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -22,13 +25,32 @@ export class RegisterComponent implements OnInit {
   reactiveForm: FormGroup;
   submitted = false;
 
-  constructor(private customerService: CustomerService, private http: HttpClient, private fb: FormBuilder) {
+  constructor(
+    private customerService: CustomerService,
+    private http: HttpClient,
+    private fb: FormBuilder,
+
+    private Jarwis: JarwisService,
+    private Token: TokenService,
+    private router: Router
+  ) {
 
   }
   ngOnInit() {
     this.customerService.getCustomer().subscribe()
     this.createForm();
   }
+
+  public form = {
+    email: null,
+    name: null,
+    password: null,
+    password_confirmation: null,
+    firstname: null,
+    lastname: null,
+    role_id: 2,
+  };
+  public error = [];
 
   createForm() {
     // this.reactiveForm = new FormGroup({
