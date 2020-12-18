@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { CustomerService } from 'src/app/shared/service/customer.service';
 import { Emloyeeinterface } from 'src/app/shared/interface/emloyeeinterface';
+import {MenuItem} from 'primeng/api';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -19,6 +20,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     this.customerService.getCustomer().subscribe()
     this.createForm();
+
   }
 
   createForm() {

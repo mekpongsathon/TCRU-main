@@ -36,6 +36,7 @@ import { SigninComponent } from './content/signin/signin.component';
 import {DialogModule} from 'primeng/dialog';
 import {PanelMenuModule} from 'primeng/panelmenu';
 import {CardModule} from 'primeng/card';
+import {BreadcrumbModule} from 'primeng/breadcrumb';
 
 @NgModule({
   declarations: [
@@ -82,6 +83,7 @@ import {CardModule} from 'primeng/card';
     DialogModule,
     PanelMenuModule,
     CardModule,
+    BreadcrumbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
