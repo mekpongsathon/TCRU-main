@@ -33,10 +33,16 @@ import { FooterComponent } from './content/footer/footer.component';
 import { MegaMenuModule } from 'primeng/megamenu';
 import { ProfileComponent } from './content/profile/profile.component';
 import { SigninComponent } from './content/signin/signin.component';
-import {DialogModule} from 'primeng/dialog';
-import {PanelMenuModule} from 'primeng/panelmenu';
-import {CardModule} from 'primeng/card';
 import {BreadcrumbModule} from 'primeng/breadcrumb';
+import { DialogModule } from 'primeng/dialog';
+import { PanelMenuModule } from 'primeng/panelmenu';
+import { CardModule } from 'primeng/card';
+import { JarwisService } from './shared/service/jarwis.service';
+import { TokenService } from './shared/service/token.service';
+import { AuthService } from './shared/service/auth.service';
+import { AfterLoginService } from './shared/service/after-login.service';
+import { BeforeLoginService } from './shared/service/before-login.service';
+import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
 
 @NgModule({
   declarations: [
@@ -80,12 +86,15 @@ import {BreadcrumbModule} from 'primeng/breadcrumb';
     MenubarModule,
     MenuModule,
     MegaMenuModule,
+    CommonModule,
     DialogModule,
     PanelMenuModule,
     CardModule,
     BreadcrumbModule,
   ],
-  providers: [],
+  providers: [JarwisService, TokenService, AuthService, AfterLoginService, BeforeLoginService,
+    { provide: 'SnotifyToastConfig', useValue: ToastDefaults },
+    SnotifyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

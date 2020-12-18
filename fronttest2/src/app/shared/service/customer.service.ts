@@ -10,7 +10,7 @@ import { element } from 'protractor';
 })
 export class CustomerService {
 
-  private url = 'http://127.0.0.1:8000/api/auth/register/';
+  private url = 'http://127.0.0.1:8000/api/register/';
   constructor(private http: HttpClient) { }
   // getCustomer() {
   //   let httpParms = new HttpParams();
@@ -38,7 +38,7 @@ export class CustomerService {
     // });
     const user = this.http.get<Emloyeeinterface[]>(`${this.url}${username}`)
     return user;
-    
+
   }
 
   getCustomerByEmail(email: string) {
@@ -48,9 +48,7 @@ export class CustomerService {
   }
 
   postCustomer(body: Emloyeeinterface) {
-
     return this.http.post(this.url, body)
-
   }
   // constructor(private http: HttpClient) {
   // }
