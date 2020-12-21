@@ -58,7 +58,6 @@ import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
     FooterComponent,
     ShopComponent,
     ProfileComponent,
-    ProfileComponent,
     LoginComponent,
     SigninComponent,
     ResetPasswordComponent,
