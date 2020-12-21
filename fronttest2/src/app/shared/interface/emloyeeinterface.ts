@@ -4,7 +4,7 @@ export interface Emloyeeinterface {
     password?: any;
     firstname: string;
     lastname: string;
-    mail: string;
+    email: string;
     telephone: string;
     role_id: number;
     updated_at?: any;

@@ -22,7 +22,6 @@ export function uniqueEmailValidator(customerService: CustomerService): AsyncVal
 export class UniqueEmailValidatorDirective implements AsyncValidator {
 
   constructor(private customerService: CustomerService) { }
-  /////////////////////////////////////////////////////////////////////////////////////////////////////VVV
   validate(c: AbstractControl): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> {
     return this.customerService.getCustomerByEmail(c.value).pipe(
       map(users => {

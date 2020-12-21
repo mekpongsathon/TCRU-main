@@ -60,7 +60,6 @@ import {TabViewModule} from 'primeng/tabview';
     FooterComponent,
     ShopComponent,
     ProfileComponent,
-    ProfileComponent,
     LoginComponent,
     SigninComponent,
     ResetPasswordComponent,

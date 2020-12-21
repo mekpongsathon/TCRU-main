@@ -23,19 +23,18 @@
                                 <small id="email-help">กรุณากรอกอีเมลที่สามารถใช้งานได้</small>
                             </div>
                         </div>
-                        <!-- <div class="text-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+
+                        <div class="text-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
                             <div *ngIf="email.errors.pattern">
                                 ชื่อผู้ใช้ประกอบไปด้วยa-z พิมพ์เล็กหรือพิมพ์ใหญ่
                             </div>
-                            <div *ngIf="email.errors['required']">โปรดกรอกชื่อผู้ใช้</div>
-                            /////// <div *ngIf="email.errors['uniqueUsername']">ชื่อผู้ใช้นี้มีผู้ใช้แล้ว</div> 
-                            <div *ngIf="email.errors.minlength">
-                                ชื่อผู้ใช้ควรมากกว่า6ตัว
-                            </div>
-                            <div class="warn" *ngIf="email.errors.maxlength">
+                            <div *ngIf="email.errors['required']">โปรดกรอกอีเมล</div>
+                            <div *ngIf="email.errors['uniqueEmail']">อีเมลนี้มีผู้ใช้แล้ว</div>
+                            <!-- <div class="warn" *ngIf="email.errors.maxlength">
                                 ชื่อผู้ใช้ควรไม่เกิน16ตัว
-                            </div>
-                        </div> -->
+                            </div> -->
+                        </div>
+
                     </div>
                 </div>
                 <div class="p-grid">
@@ -57,7 +56,7 @@
                             </div>
                         </div>
                         <!--<a class="text-danger">*</a><small>โปรดกรอกรหัสผ่านด้วย a-z พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small> -->
-                        <!-- <div class="text-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+                        <div class="text-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
                             <div *ngIf="password.errors.pattern">
                                 รหัสผ่านประกอบไปด้วยa-zพิมพ์เล็กหรือพิมพ์ใหญ่ ตัวเลข
                             </div>
@@ -68,7 +67,7 @@
                             <div *ngIf="password.errors.maxlength">
                                 รหัสผ่านควรไม่เกิน16ตัว
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                     <div class="p-col-12 p-md-6 p-lg-6 form-group border-filed p-input-filled">
                         <div class="p-inputgroup">
@@ -83,14 +82,15 @@
                                     class="p-inputtext-lg form-control w-100 " formControlName="password_confirmation"
                                     required minlength="6" maxlength="16" pattern="^[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]+$"
                                     aria-describedby="password-help" />
-                                <!-- <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small> -->
+                                <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
+                                    พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
                             </div>
                         </div>
-                        <!-- <div class="text-danger"
+                        <div class="text-danger"
                             *ngIf="password_confirmation.invalid && (password_confirmation.dirty || password_confirmation.touched)">
                             <div *ngIf="password_confirmation.errors['required']">โปรดกรอกรหัสผ่าน</div>
                             <div *ngIf="password_confirmation.errors['compare']">โปรดกรอกรหัสผ่านให้เหมือนกัน</div>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
                 <div class="p-grid">
@@ -108,12 +108,13 @@
                                     pattern="^[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]+$" /> -->
                                 <input type="text" id="password" pInputText class="p-inputtext-lg form-control w-100"
                                     formControlName="firstname" required aria-describedby="firstname-help" />
-                                <!-- <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small> -->
+                                <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
+                                    พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
                             </div>
                         </div>
-                        <!-- <div class="text-danger" *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)">
+                        <div class="text-danger" *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)">
                             <div *ngIf="firstname.errors['required']">โปรดกรอกชื่อ</div>
-                        </div> -->
+                        </div>
                     </div>
                     <div class="p-col-12 p-md-6 p-lg-6 form-group border-filed p-input-filled">
                         <div class="p-inputgroup">
@@ -126,12 +127,13 @@
                                 <label for="lastname">นามสกุล</label>
                                 <input type="text" id="lastname" pInputText class="p-inputtext-lg form-control w-100"
                                     formControlName="lastname" required aria-describedby="lastname-help" />
-                                <!-- <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small> -->
+                                <a class="text-danger">*</a><small id="password-help">โปรดกรอกรหัสผ่านด้วย a-z
+                                    พิมพ์เล็กหรือพิมพ์ใหญ่หรือตัวเลข 6-16 ตัวอักษร</small>
                             </div>
                         </div>
-                        <!-- <div class="text-danger" *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)">
+                        <div class="text-danger" *ngIf="lastname.invalid && (lastname.dirty || lastname.touched)">
                             <div *ngIf="lastname.errors['required']">โปรดกรอกนามสกุล</div>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
                 <br>

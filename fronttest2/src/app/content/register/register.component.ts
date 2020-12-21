@@ -79,7 +79,7 @@ export class RegisterComponent implements OnInit {
 
     // , uniqueUsernameValidator(this.customerService)
     this.reactiveForm = this.fb.group({
-      email: ['', [Validators.required]],
+      email: ['', [Validators.required], uniqueEmailValidator(this.customerService)],
       name: ['user'],
       firstname: ['', [Validators.required]],
       lastname: ['', [Validators.required]],
