@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShopComponent implements OnInit {
 
+  activeIndex: number = 0;
+
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

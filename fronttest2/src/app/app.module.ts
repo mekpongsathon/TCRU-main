@@ -43,6 +43,8 @@ import { AuthService } from './shared/service/auth.service';
 import { AfterLoginService } from './shared/service/after-login.service';
 import { BeforeLoginService } from './shared/service/before-login.service';
 import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
+import {TabMenuModule} from 'primeng/tabmenu';
+import {TabViewModule} from 'primeng/tabview';
 
 @NgModule({
   declarations: [
@@ -90,6 +92,8 @@ import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
     DialogModule,
     PanelMenuModule,
     CardModule,
+    TabMenuModule,
+    TabViewModule
 
   ],
   providers: [JarwisService, TokenService, AuthService, AfterLoginService, BeforeLoginService,
