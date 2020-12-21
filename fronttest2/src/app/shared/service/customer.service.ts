@@ -11,6 +11,7 @@ import { element } from 'protractor';
 export class CustomerService {
 
   private url = 'http://127.0.0.1:8000/api/register/';
+  private validateEmailURL = 'http://127.0.0.1:8000/api/emailvailate/';
   constructor(private http: HttpClient) { }
   // getCustomer() {
   //   let httpParms = new HttpParams();
@@ -42,9 +43,10 @@ export class CustomerService {
   }
 
   getCustomerByEmail(email: string) {
-    return this.http.get<any[]>(this.url, {
-      params: new HttpParams().set('email', email)
-    });
+    return this.http.get<any[]>(`${this.validateEmailURL}${email}`)
+    // (this.validateEmailURL, {
+    //   params: new HttpParams().set('email', email)
+    // });
   }
 
   postCustomer(body: Emloyeeinterface) {
