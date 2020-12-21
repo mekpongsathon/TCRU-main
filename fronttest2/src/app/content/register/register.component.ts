@@ -41,16 +41,33 @@ export class RegisterComponent implements OnInit {
     this.createForm();
   }
 
-  public form = {
-    email: null,
-    name: null,
-    password: null,
-    password_confirmation: null,
-    firstname: null,
-    lastname: null,
-    role_id: 2,
-  };
+  // public form = {
+  //   email: null,
+  //   name: null,
+  //   password: null,
+  //   password_confirmation: null,
+  //   firstname: null,
+  //   lastname: null,
+  //   // role_id: 2,
+  // };
   public error = [];
+
+  // onSubmit() {
+  //   this.Jarwis.signup(this.reactiveForm).subscribe(
+  //     data => this.handleResponse(data),
+  //     error => this.handleError(error)
+  //   );
+  // }
+
+  handleResponse(data) {
+    this.Token.handle(data.access_token);
+    this.router.navigateByUrl('/profile');
+  }
+
+  // handleError(error) {
+  //   this.error = error.error.errors;
+  // }
+
 
   createForm() {
     // this.reactiveForm = new FormGroup({
@@ -59,17 +76,21 @@ export class RegisterComponent implements OnInit {
     //   password: new FormControl('', Validators.required),
     //   passwordConfirm: new FormControl('', [Validators.required, CompareValidator('password')])
     // })
+
+    // , uniqueUsernameValidator(this.customerService)
     this.reactiveForm = this.fb.group({
-      username: ['', null, uniqueUsernameValidator(this.customerService), Validators.minLength(6), Validators.maxLength(16), Validators.pattern('^[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]+$')],
+      email: ['', [Validators.required]],
+      name: ['user'],
+      firstname: ['', [Validators.required]],
+      lastname: ['', [Validators.required]],
       // tel: ['', [Validators.required], Validators.maxLength(10), Validators.pattern('^[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]+$')],
       // email: ['', [Validators.required], uniqueEmailValidator(this.customerService)],
       // emailConfirm: ['', [Validators.required, compareValidator('email')], uniqueEmailValidator(this.customerService)],
-      password: ['', [Validators.required], Validators.maxLength(16), Validators.pattern('^[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]+$')],
-      passwordConfirm: ['', [Validators.required, compareValidator('password'), Validators.maxLength(16)]],
-      firstname: ['', [Validators.required], Validators.maxLength(16)],
-      lastname: ['', [Validators.required], Validators.maxLength(16)],
-      role_id: [2, [Validators.required]],
-      telephone: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+      password_confirmation: ['', [Validators.required, compareValidator('password'), Validators.maxLength(16)]],
+
+      // role_id: [2, [Validators.required]],
+      // telephone: ['', [Validators.required]],
     })
   }
 
@@ -80,8 +101,12 @@ export class RegisterComponent implements OnInit {
     if (this.reactiveForm.invalid) {
       return;
     } else {
-      const customer = this.reactiveForm.getRawValue();
-      this.customerService.postCustomer(customer).subscribe();
+      // const customer = this.reactiveForm.getRawValue();
+      // this.customerService.postCustomer(customer).subscribe();
+      this.Jarwis.signup(this.reactiveForm.getRawValue()).subscribe(
+        data => this.handleResponse(data),
+        // error => this.handleError(error)
+      );
     }
 
   }
@@ -92,24 +117,24 @@ export class RegisterComponent implements OnInit {
   get firstname() {
     return this.reactiveForm.get('firstname')
   }
-  get username() {
-    return this.reactiveForm.get('username')
-  }
+  // get username() {
+  //   return this.reactiveForm.get('username')
+  // }
   get email() {
     return this.reactiveForm.get('email')
   }
-  get emailConfirm() {
-    return this.reactiveForm.get('emailConfirm')
-  }
+  // get emailConfirm() {
+  //   return this.reactiveForm.get('emailConfirm')
+  // }
   get password() {
     return this.reactiveForm.get('password')
   }
-  get passwordConfirm() {
-    return this.reactiveForm.get('passwordConfirm')
+  get password_confirmation() {
+    return this.reactiveForm.get('password_confirmation')
   }
-  get telephone() {
-    return this.reactiveForm.get('telephone')
-  }
+  // get telephone() {
+  //   return this.reactiveForm.get('telephone')
+  // }
 
 
 
