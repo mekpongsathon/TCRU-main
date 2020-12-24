@@ -1,3 +1,4 @@
+import { ProductInfoComponent } from './content/productInfo/productInfo.component';
 import { PleaseCheckMailComponent } from './content/pleaseCheckMail/pleaseCheckMail.component';
 import { ResetPasswordComponent } from './content/resetPassword/resetPassword.component';
 import { ShopComponent } from './content/shop/shop.component';
@@ -43,6 +44,10 @@ const routes: Routes = [
   {
     path: 'login/resetpassword/checkmail',
     component: PleaseCheckMailComponent,
+  },
+  {
+    path: 'productinfo',
+    component: ProductInfoComponent,
   },
 
 ];
