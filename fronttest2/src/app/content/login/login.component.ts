@@ -10,6 +10,7 @@ import { JarwisService } from 'src/app/shared/service/jarwis.service';
 import { TokenService } from 'src/app/shared/service/token.service';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/service/auth.service';
+// import { MessageService } from 'primeng/api/primeng-api';
 
 
 @Component({
@@ -29,7 +30,7 @@ export class LoginComponent implements OnInit {
   // private duplicateEmailDbounce;
   reactiveForm: FormGroup;
   submitted = false;
-
+  isUserNull = false;
   constructor(
     private customerService: CustomerService,
     private http: HttpClient,
@@ -38,6 +39,7 @@ export class LoginComponent implements OnInit {
     private Token: TokenService,
     private router: Router,
     private Auth: AuthService,
+    // private messageService: MessageService,
   ) {
 
   }
@@ -66,7 +68,7 @@ export class LoginComponent implements OnInit {
 
   createForm() {
     this.reactiveForm = this.fb.group({
-      username: ['', null, uniqueUsernameValidator(this.customerService), Validators.minLength(6), Validators.maxLength(16), Validators.pattern('^[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]+$')],
+      username: ['', null, uniqueUsernameValidator(this.customerService), [Validators.required]],
       password: ['', [Validators.required], Validators.maxLength(16), Validators.pattern('^[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]+$')],
       role_id: [2, [Validators.required]],
     })
@@ -74,13 +76,26 @@ export class LoginComponent implements OnInit {
 
 
   onClickRegis() {
-
     this.submitted = true;
     if (this.reactiveForm.invalid) {
       return;
     } else {
       const customer = this.reactiveForm.getRawValue();
-      this.customerService.postCustomer(customer).subscribe();
+      this.customerService.postCustomer(customer).subscribe(
+        // (response: Response) => {
+
+        // },
+        // error => {
+        //   this.messageService.clear();
+        //   this.messageService.add({
+        //     key: "errorMessage",
+        //     severity: "error",
+        //     summary: "ผิดพลาด",
+        //     detail: error.error.errorMessage
+        //   });
+        // }
+      );
+
     }
   }
 

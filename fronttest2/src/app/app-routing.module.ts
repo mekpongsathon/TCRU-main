@@ -10,12 +10,13 @@ import { ProfileComponent } from './content/profile/profile.component';
 import { SigninComponent } from './content/signin/signin.component';
 import { BeforeLoginService } from './shared/service/before-login.service';
 import { AfterLoginService } from './shared/service/after-login.service';
+import { ProductviewComponent } from './content/productview/productview.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: ShopComponent,
+    component: ProductviewComponent,
 
   },
   {
@@ -49,6 +50,10 @@ const routes: Routes = [
     path: 'productinfo',
     component: ProductInfoComponent,
   },
+  // {
+  //   path: 'product',
+  //   component: ProductviewComponent,
+  // },
 
 ];
 
