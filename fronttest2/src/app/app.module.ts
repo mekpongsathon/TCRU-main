@@ -1,3 +1,4 @@
+import { ProductInfoComponent } from './content/productInfo/productInfo.component';
 import { PleaseCheckMailComponent } from './content/pleaseCheckMail/pleaseCheckMail.component';
 import { ResetPasswordComponent } from './content/resetPassword/resetPassword.component';
 import { LoginComponent } from './content/login/login.component';
@@ -45,6 +46,9 @@ import { BeforeLoginService } from './shared/service/before-login.service';
 import { SnotifyModule, SnotifyService, ToastDefaults } from 'ng-snotify';
 import {TabMenuModule} from 'primeng/tabmenu';
 import {TabViewModule} from 'primeng/tabview';
+import {DropdownModule} from 'primeng/dropdown';
+import {FieldsetModule} from 'primeng/fieldset';
+
 
 @NgModule({
   declarations: [
@@ -64,6 +68,7 @@ import {TabViewModule} from 'primeng/tabview';
     SigninComponent,
     ResetPasswordComponent,
     PleaseCheckMailComponent,
+    ProductInfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -92,7 +97,9 @@ import {TabViewModule} from 'primeng/tabview';
     PanelMenuModule,
     CardModule,
     TabMenuModule,
-    TabViewModule
+    TabViewModule,
+    DropdownModule,
+    FieldsetModule,
 
   ],
   providers: [JarwisService, TokenService, AuthService, AfterLoginService, BeforeLoginService,

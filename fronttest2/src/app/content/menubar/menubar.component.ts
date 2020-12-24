@@ -31,7 +31,7 @@ export class MenubarComponent implements OnInit {
 
     ngOnInit(): void {
         this.Auth.authStatus.subscribe(value => this.loggedIn = value);
-        // this.items = [
+        this.items = [
         //     {
         //         label: 'หน้าหลัก',
         //         icon: 'pi pi-fw pi-home',
@@ -77,13 +77,17 @@ export class MenubarComponent implements OnInit {
         //             { label: 'ออกจากระบบ', icon: 'pi pi-fw pi-sign-out' },
         //         ]
         //     },
-        //     {
-        //         label: 'เข้าสู่ระบบ',
-        //         icon: 'pi pi-fw pi-sign-in',
-        //         // /login
-        //         routerLink: ['/login']
-
-        //     },
+            // {
+            //     label: 'เข้าสู่ระบบ',
+            //     icon: 'pi pi-fw pi-sign-in',
+            //     // /login
+            //     routerLink: ['/login'],
+            //     items: [
+            //         if(!loggedIn:true):false
+                
+            //     ]
+                    
+            // },
         //     {
         //         label: 'สมัครสมาชิก',
         //         icon: 'pi pi-fw pi-sign-in',
@@ -91,7 +95,7 @@ export class MenubarComponent implements OnInit {
         //         routerLink: ['/register']
 
         //     },
-        // ];
+        ];
     }
 
 }

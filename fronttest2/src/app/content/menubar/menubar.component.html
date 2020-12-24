@@ -5,12 +5,12 @@
     </a>
     <!-- <p-menubar [model]="items" styleClass="menu"></p-menubar> -->
 
-    <a class="navbar-brand" routerLink="login" *ngIf="!loggedIn">Login</a>
-    <a class="navbar-brand" href="#" (click)="logout($event)" *ngIf="loggedIn">Logout</a>
-    <a class="navbar-brand" routerLink="profile" *ngIf="loggedIn">Profile</a>
-    <a class="navbar-brand" routerLink="register" *ngIf="!loggedIn">register</a>
-    <a class="navbar-brand" routerLink="login/resetpassword">resetpassword</a>
-
+    <a class="navbar-brand menu" routerLink="productinfo">ผลิตภัณฑ์</a>
+    <a class="navbar-brand menu" routerLink="profile" *ngIf="loggedIn">บัญชีผู้ใช้</a>
+    <a class="navbar-brand menu" routerLink="register" *ngIf="!loggedIn">ลงทะเบียน</a>
+    <a class="navbar-brand menu" routerLink="login/resetpassword">ลืมรหัสผ่าน</a>
+    <a class="navbar-brand menu" routerLink="login" *ngIf="!loggedIn">เข้าสู่ระบบ</a>
+    <a class="navbar-brand menu" href="#" (click)="logout($event)" *ngIf="loggedIn">ออกจากระบบ</a>
 
 
 
