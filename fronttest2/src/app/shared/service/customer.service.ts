@@ -3,15 +3,18 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Emloyeeinterface } from '../interface/emloyeeinterface';
 import { map, tap } from 'rxjs/operators';
 import { element } from 'protractor';
+import { Observable, Subject } from 'rxjs';
+import { stringify } from 'querystring';
+import { ApiConstants } from '../constants/ApiConstants';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class CustomerService {
-
-  private url = 'http://127.0.0.1:8000/api/register/';
-  private validateEmailURL = 'http://127.0.0.1:8000/api/emailvailate/';
+  private emloyeeinterface = new Subject<Emloyeeinterface>();
+  private url = '/api/register/';
+  private validateEmailURL = '/api/emailvailate/';
   constructor(private http: HttpClient) { }
   // getCustomer() {
   //   let httpParms = new HttpParams();
@@ -33,31 +36,50 @@ export class CustomerService {
     )
   }
 
-  getCustomerByUsername(username: string) {
-    // return this.http.get<any[]>(this.urlRequest, {
-    //   params: new HttpParams().set('username', username)
-    // });
-    const user = this.http.get<Emloyeeinterface[]>(`${this.url}${username}`)
-    return user;
-
+  getCustomerByUsername(
+    username: string
+  ): Observable<{ status: string; data: Emloyeeinterface; code: number }> {
+    try {
+      return this.http.get<Emloyeeinterface[]>(`${ApiConstants.baseURl}${this.url}${username}`).pipe(
+        map(response => {
+          this.emloyeeinterface.next(response["data"][0]);
+          return {
+            status: response["result"],
+            code: response["code"],
+            data: response["data"][0] as Emloyeeinterface
+          };
+        })
+      );
+    } catch (error) {
+      console.table(error.message);
+    }
   }
 
+
+
+
+  getCustomerByUsernameValidate(username: string) {
+    const user = this.http.get<Emloyeeinterface[]>(`${ApiConstants.baseURl}${this.url}${username}`)
+    return user;
+  }
+
+  // getCustomerByUsername(username: string) {
+  //   const user = this.http.get<Emloyeeinterface[]>(`${this.url}${username}`)
+  //   return user;
+  // }
+
+
+
   getCustomerByEmail(email: string) {
-    return this.http.get<any[]>(`${this.validateEmailURL}${email}`)
-    // (this.validateEmailURL, {
-    //   params: new HttpParams().set('email', email)
-    // });
+    return this.http.get<any[]>(`${ApiConstants.baseURl}${this.validateEmailURL}${email}`)
   }
 
   postCustomer(body: Emloyeeinterface) {
     return this.http.post(this.url, body)
   }
-  // constructor(private http: HttpClient) {
-  // }
 
-  // getDepartment(data: Emloyeeinterface) {
-  //   let httpParms = new HttpParams();
-  //   const observable = this.http.get<Emloyeeinterface[]>('/api/register', { params: httpParms })
-  //   return observable;
-  // }
+  getCustomerLogin(): Subject<Emloyeeinterface> {
+    return this.emloyeeinterface;
+  }
+
 }

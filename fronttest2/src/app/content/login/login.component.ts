@@ -82,18 +82,7 @@ export class LoginComponent implements OnInit {
     } else {
       const customer = this.reactiveForm.getRawValue();
       this.customerService.postCustomer(customer).subscribe(
-        // (response: Response) => {
 
-        // },
-        // error => {
-        //   this.messageService.clear();
-        //   this.messageService.add({
-        //     key: "errorMessage",
-        //     severity: "error",
-        //     summary: "ผิดพลาด",
-        //     detail: error.error.errorMessage
-        //   });
-        // }
       );
 
     }
