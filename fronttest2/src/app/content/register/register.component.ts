@@ -9,13 +9,16 @@ import { uniqueUsernameValidator } from 'src/app/shared/service/unique-username-
 import { JarwisService } from 'src/app/shared/service/jarwis.service';
 import { TokenService } from 'src/app/shared/service/token.service';
 import { Router } from '@angular/router';
-
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { DropdownModule } from 'primeng/dropdown';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
+
 export class RegisterComponent implements OnInit {
 
 
@@ -24,6 +27,8 @@ export class RegisterComponent implements OnInit {
   // private duplicateEmailDbounce;
   reactiveForm: FormGroup;
   submitted = false;
+  categories: any[] = [{ name: 'ชาย', key: 'M' }, { name: 'หญิง', key: 'W' }];
+  selectedCategory: any = null;
 
   constructor(
     private customerService: CustomerService,
@@ -37,8 +42,9 @@ export class RegisterComponent implements OnInit {
 
   }
   ngOnInit() {
-    this.customerService.getCustomer().subscribe()
+    // this.customerService.getCustomer().subscribe()
     this.createForm();
+    this.selectedCategory = this.categories[1];
   }
 
   // public form = {
@@ -86,6 +92,7 @@ export class RegisterComponent implements OnInit {
       // tel: ['', [Validators.required], Validators.maxLength(10), Validators.pattern('^[A-Za-z0-9ñÑáéíóúÁÉÍÓÚ ]+$')],
       // email: ['', [Validators.required], uniqueEmailValidator(this.customerService)],
       // emailConfirm: ['', [Validators.required, compareValidator('email')], uniqueEmailValidator(this.customerService)],
+      gender: ['', [Validators.required]],
       password: ['', [Validators.required]],
       password_confirmation: ['', [Validators.required, compareValidator('password'), Validators.maxLength(16)]],
 
@@ -130,6 +137,9 @@ export class RegisterComponent implements OnInit {
     return this.reactiveForm.get('password')
   }
   get password_confirmation() {
+    return this.reactiveForm.get('password_confirmation')
+  }
+  get gender() {
     return this.reactiveForm.get('password_confirmation')
   }
   // get telephone() {

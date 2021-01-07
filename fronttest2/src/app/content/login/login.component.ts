@@ -44,15 +44,20 @@ export class LoginComponent implements OnInit {
 
   }
   ngOnInit() {
-    this.customerService.getCustomer().subscribe()
+    // this.customerService.getCustomer().subscribe()
 
     this.createForm();
   }
 
   onSubmit() {
     this.Jarwis.login(this.form).subscribe(
-      data => this.handleResponse(data),
-      error => this.handleError(error)
+      (response: Response) => {
+        this.handleResponse(response);
+        localStorage.setItem("customerUsername", this.form.email);
+      },
+      error => {
+        this.handleError(error);
+      }
     );
   }
 
@@ -64,6 +69,7 @@ export class LoginComponent implements OnInit {
     this.Token.handle(data.access_token);
     this.Auth.changeAuthStatus(true);
     this.router.navigateByUrl('/profile');
+    // localStorage.setItem("customerUsername","");
   }
 
   createForm() {
@@ -82,9 +88,7 @@ export class LoginComponent implements OnInit {
     } else {
       const customer = this.reactiveForm.getRawValue();
       this.customerService.postCustomer(customer).subscribe(
-
       );
-
     }
   }
 

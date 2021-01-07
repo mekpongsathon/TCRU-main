@@ -23,6 +23,7 @@ export class ProductviewComponent implements OnInit {
   constructor(private productService: ProductService) { }
   ngOnInit(): void {
     this.queryDepartment();
+
   }
 
 

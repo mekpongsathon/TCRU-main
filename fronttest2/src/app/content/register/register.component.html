@@ -92,14 +92,13 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="p-grid">
                     <div class="p-col-12 p-md-6 p-sm-6 form-group border-filed p-input-filled">
+
                         <div class="p-inputgroup">
-                            <!-- <span class="p-float-label">
-                                <input type="text" id="name" pInputText class="p-inputtext-lg form-control"
-                                    formControlName="firstname">
-                                <label for="">ชื่อ</label>
-                            </span> -->
+                            <!-- <p-radioButton name="groupname" value="val1" [(ngModel)]="selectedValue"></p-radioButton>
+                            <p-radioButton name="groupname" value="val2" [(ngModel)]="selectedValue"></p-radioButton> -->
                             <div class="p-field">
                                 <label for="firstname">ชื่อ (ภาษาไทย)</label>
                                 <!-- <input type="text" id="firstname"" pInputText class="p-inputtext-lg form-control w-100"
@@ -144,6 +143,15 @@
                     </div>
                 </div>
             </div>
+
+
         </div>
     </body>
 </form>
+
+
+<div *ngFor="let category of categories" class="p-field-checkbox ">
+    <p-radioButton [inputId]="category.key" name="category" [value]="category" [(ngModel)]="selectedCategory"
+        [disabled]="category.key === 'R'"></p-radioButton>
+    <label [for]="category.key">{{category.name}}</label>
+</div>
